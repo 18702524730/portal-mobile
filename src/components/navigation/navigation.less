@@ -1,0 +1,15 @@
+@import "../index";
+
+.tab-style() {
+  padding-top: 15/2px;
+  padding-bottom: 15/2px;
+  background-color: @main-bg-color;
+  /deep/ .van-tab__text--ellipsis {
+    font-size: 24/2px;
+  }
+  /deep/ .van-tabs__nav--card {
+    .van-tab {
+      border: 1Px solid @main-color;
+    }
+  }
+}

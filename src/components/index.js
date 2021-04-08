@@ -1,0 +1,93 @@
+import Vue from 'vue'
+import {
+  Button,
+  Col,
+  Row,
+  Swipe,
+  SwipeItem,
+  Lazyload,
+  Notify,
+  Tab,
+  Tabs,
+  Popup,
+  Panel,
+  Cell,
+  CellGroup,
+  Image,
+  Loading,
+  Empty,
+  Icon,
+  Form,
+  Field,
+  Sticky,
+  Calendar,
+  Search,
+  TreeSelect,
+  Tag,
+  Pagination,
+  Toast,
+  Overlay,
+  ActionSheet,
+  NavBar,
+  Sidebar,
+  SidebarItem,
+  Radio,
+  RadioGroup,
+  Checkbox,
+  CheckboxGroup,
+  Tabbar,
+  TabbarItem,
+  Rate,
+  Area,
+  CountDown,
+  Picker,
+  Collapse,
+  CollapseItem,
+  Dialog
+} from 'vant'
+
+Vue.use(Button)
+Vue.use(Col)
+Vue.use(Row)
+Vue.use(Swipe)
+Vue.use(SwipeItem)
+Vue.use(Lazyload)
+Vue.use(Notify)
+Vue.use(Tab)
+Vue.use(Tabs)
+Vue.use(Popup)
+Vue.use(Panel)
+Vue.use(Cell)
+Vue.use(CellGroup)
+Vue.use(Image)
+Vue.use(Loading)
+Vue.use(Empty)
+Vue.use(Icon)
+Vue.use(Form)
+Vue.use(Field)
+Vue.use(Sticky)
+Vue.use(Calendar)
+Vue.use(Search)
+Vue.use(TreeSelect)
+Vue.use(Tag)
+Vue.use(Pagination)
+Vue.use(Toast)
+Vue.use(Overlay)
+Vue.use(ActionSheet)
+Vue.use(NavBar)
+Vue.use(Sidebar)
+Vue.use(SidebarItem)
+Vue.use(Radio)
+Vue.use(RadioGroup)
+Vue.use(Checkbox)
+Vue.use(CheckboxGroup)
+Vue.use(Tabbar)
+Vue.use(TabbarItem)
+Vue.use(Rate)
+Vue.use(Area)
+Vue.use(CountDown)
+Vue.use(Picker)
+Vue.use(Collapse)
+Vue.use(CollapseItem)
+Vue.use(Dialog)
+Vue.use(Pagination)

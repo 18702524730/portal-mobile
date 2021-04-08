@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
+  />
+  <link rel="icon" href="<%= BASE_URL %>logo.ico">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1955675_60s5p57o9wc.css">
+  <title>厦门知识产权运营公共服务平台</title>
+  <script src="http://testim.attiot.com/index/index/chatBoxJs/u/5f06859733e34"></script>
+  <style>
+    div#WS-SHOW-CHAT{display:none!important;}
+    html,
+    body,
+    #app {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #app {
+      height: 100%;
+    }
+  </style>
+  <script>
+    window._CONFIG = {};
+    // window._CONFIG['domianURL'] = 'http://192.168.12.4:8080/jeecg-boot';
+    window._CONFIG['userCenterURL'] = 'http://122.112.165.166:3000';
+    window._CONFIG['pcURL'] = 'http://122.112.165.166:3002';
+    window._CONFIG['userCenterToURL'] = window._CONFIG['userCenterURL'] + '/dashboard/centerLogin';
+
+    window._CONFIG['videoUrl'] = 'http://122.112.165.166:8888';
+    window._CONFIG['domianURL'] = 'http://122.112.165.166:8079/jeecg-boot';
+    window._CONFIG['unionURL'] = 'http://xm.xmipop.com/#';
+    window._CONFIG['casPrefixUrl'] = 'http://cas.example.org:8443/cas';
+    window._CONFIG['imgDomainURL'] = window._CONFIG['domianURL'] + '/sys/common/view';
+    window._CONFIG['downloadUrl'] = window._CONFIG['domianURL'] + '/sys/common/download';
+    window._CONFIG['pdfDomainURL'] =  window._CONFIG['domianURL'] + '/sys/common/pdf/pdfPreviewIframe';
+    window._CONFIG['roleCookieName'] = "roleCookieName";
+
+    window._CONFIG['ixmURL'] = 'https://test.ixm.gov.cn/ids/custom/xiamen/login_xm.jsp?loginType=Citizen&returnUrl=https://test.ixm.gov.cn/ids/custom/xiamen/autoSubmitForProxyLogin.jsp?coAppName=XMZSCQYYGGFWPT';
+    window._CONFIG['registerUrl'] = window._CONFIG['userCenterURL'] + '/register/page';
+    window._CONFIG['forgetUrl'] = window._CONFIG['userCenterURL'] + '/alteration/page';
+    window._CONFIG['loginUrl'] = window._CONFIG['userCenterURL'] + '/customer/login';
+    window._CONFIG['serviceUrl'] = 'http://testim.attiot.com/kefu/';
+    window.__setCookie=function(name,value)
+    {
+      var Days = 1;
+      var exp = new Date();
+      exp.setTime(exp.getTime() + Days*24*60*60*1000);
+      document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+    }
+
+    window.__getCookie=function(name)
+    {
+      var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+      if(arr=document.cookie.match(reg))
+        return unescape(arr[2]);
+      else
+        return null;
+    }
+
+    function getBlack(){
+      timedGetText(window._CONFIG['domianURL']+'/zscq/portal/getBlackInfo'+"?_t="+ (new Date()).getTime(),1000)
+    }
+
+    function timedGetText( url, time ){
+      var request = new XMLHttpRequest();
+      var timeout = false;
+      var timer = setTimeout( function(){
+        timeout = true;
+        request.abort();
+      }, time );
+      request.open( "GET", url ,false);
+      request.onreadystatechange = function(){
+        if( request.readyState !== 4 ) return;
+        if( timeout ) return;
+        clearTimeout( timer );
+        if( request.status === 200 ){
+          var res = JSON.parse(request.responseText)
+          if (res && res.result && res.result.blackInfo === '1') {
+            var html = document.getElementById("html");
+            //修改标签的style值有两种方式
+            html.setAttribute("style","filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(100%);");//一次添加多个
+          }
+          console.info(res);
+        }
+      }
+      request.send( null );
+    }
+    getBlack()
+  </script>
+</head>
+<body>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
+</html>
